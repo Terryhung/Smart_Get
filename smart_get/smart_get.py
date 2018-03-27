@@ -19,7 +19,7 @@ class SmartGet(object):
 
     def get(self, url):
         r = requests.get(url, headers=self.headers)
-        r.encoding = self.get_encoding(BeautifulSoup(r.text))
+        r.encoding = self._get_encoding(BeautifulSoup(r.text))
         return r
 
     def _get_encoding(self, soup):
